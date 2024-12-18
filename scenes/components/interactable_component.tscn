@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt7x3uw8cn1f2"]
+
+[ext_resource type="Script" path="res://scenes/components/interactable_component.gd" id="1_x0ngj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xaxg5"]
+
+[node name="InteractableComponent" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_x0ngj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 2
+shape = SubResource("RectangleShape2D_xaxg5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
