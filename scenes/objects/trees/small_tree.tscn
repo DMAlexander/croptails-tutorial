@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsis5ycnm1lat"]
+[gd_scene load_steps=8 format=3 uid="uid://dsis5ycnm1lat"]
 
 [ext_resource type="Texture2D" uid="uid://d14hpl01u0ac0" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_fsbwe"]
+[ext_resource type="Script" path="res://scenes/objects/trees/small_tree.gd" id="2_2bqq4"]
 [ext_resource type="PackedScene" uid="uid://7tdlqw8fxc3o" path="res://scenes/components/hurt_component.tscn" id="2_l44hr"]
+[ext_resource type="PackedScene" uid="uid://dqy04e7gmh0fr" path="res://scenes/components/damage_component.tscn" id="3_d48fh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_emx8d"]
 atlas = ExtResource("1_fsbwe")
@@ -16,6 +18,7 @@ size = Vector2(10, 22)
 [node name="SmallTree" type="Sprite2D"]
 position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_emx8d")
+script = ExtResource("2_2bqq4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -29,3 +32,6 @@ shape = SubResource("CircleShape2D_n3xrj")
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_qiqwn")
 debug_color = Color(0.652984, 0.366273, 0.924895, 0.42)
+
+[node name="DamageComponent" parent="." instance=ExtResource("3_d48fh")]
+max_damage = 3
