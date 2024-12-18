@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsis5ycnm1lat"]
+
+[ext_resource type="Texture2D" uid="uid://d14hpl01u0ac0" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_fsbwe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emx8d"]
+atlas = ExtResource("1_fsbwe")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n3xrj"]
+radius = 4.0
+
+[node name="SmallTree" type="Sprite2D"]
+texture = SubResource("AtlasTexture_emx8d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_n3xrj")
