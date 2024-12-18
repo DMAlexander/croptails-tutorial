@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://d6uurky2lj0"]
+
+[ext_resource type="Texture2D" uid="uid://d14hpl01u0ac0" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_rbj1c"]
+[ext_resource type="PackedScene" uid="uid://t6dqfnai8pvm" path="res://scenes/components/collectable_component.tscn" id="2_1djvm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pag5k"]
+atlas = ExtResource("1_rbj1c")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bmm8y"]
+radius = 9.0
+
+[node name="Log" type="Sprite2D"]
+texture = SubResource("AtlasTexture_pag5k")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_1djvm")]
+collectable_name = "log"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_bmm8y")
+debug_color = Color(1.92523e-07, 0.646203, 0.242688, 0.42)
