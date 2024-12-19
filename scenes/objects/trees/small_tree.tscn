@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dqy04e7gmh0fr" path="res://scenes/components/damage_component.tscn" id="3_d48fh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fvdjp"]
+resource_local_to_scene = true
 shader = ExtResource("1_232n8")
 shader_parameter/shake_intensity = 0.0
 shader_parameter/shake_speed = 20.0
