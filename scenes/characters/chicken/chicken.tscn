@@ -77,6 +77,8 @@ frame_progress = 0.320003
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_hux71")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("2_3ye8m")
 initial_node_state = NodePath("Idle")
@@ -86,7 +88,8 @@ script = ExtResource("3_dgir2")
 character = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d")]
+[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d", "navigation_agent_2d")]
 script = ExtResource("4_fh3mf")
 character = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+navigation_agent_2d = NodePath("../../NavigationAgent2D")
