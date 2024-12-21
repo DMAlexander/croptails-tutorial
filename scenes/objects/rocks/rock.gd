@@ -12,7 +12,7 @@ func _ready() -> void:
 func on_hurt(hit_damage: int) -> void:
 	damage_component.apply_damage(hit_damage)
 	material.set_shader_parameter("shake_intensity", 0.3)
-	print("rock shake")
+#	print("rock shake")
 	await get_tree().create_timer(0.5).timeout
 	material.set_shader_parameter("shake_intensity", 0.0)
 	
