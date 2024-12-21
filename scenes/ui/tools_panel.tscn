@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=3 uid="uid://di2dww5g2hslq"]
+
+[ext_resource type="Theme" uid="uid://wnflhh2gfw0m" path="res://scenes/ui/game_ui_theme.tres" id="1_753ps"]
+[ext_resource type="Texture2D" uid="uid://1clrw44ustsq" path="res://assets/game/objects/basic_tools_and_materials.png" id="2_ewurb"]
+[ext_resource type="Script" path="res://scenes/ui/tools_panel.gd" id="2_wgv02"]
+[ext_resource type="Texture2D" uid="uid://b8nnmyvc1gy8l" path="res://assets/game/objects/basic_plants.png" id="3_71qpd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2ej1"]
+atlas = ExtResource("2_ewurb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0n64n"]
+load_path = "res://.godot/imported/basic_tools_and_materials.png-5fbfb155963b9fe96058cf82f108c264.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lafjc"]
+atlas = SubResource("CompressedTexture2D_0n64n")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tjcb1"]
+load_path = "res://.godot/imported/basic_tools_and_materials.png-5fbfb155963b9fe96058cf82f108c264.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0gij"]
+atlas = SubResource("CompressedTexture2D_tjcb1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpkem"]
+atlas = ExtResource("3_71qpd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2ve76"]
+load_path = "res://.godot/imported/basic_plants.png-95b9b15040aa30969080ee5e6985e7ef.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q88ea"]
+atlas = SubResource("CompressedTexture2D_2ve76")
+region = Rect2(0, 16, 16, 16)
+
+[node name="ToolsPanel" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_753ps")
+theme_type_variation = &"DarkWoodPanel"
+script = ExtResource("2_wgv02")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ToolAxe" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_f2ej1")
+icon_alignment = 1
+
+[node name="ToolTilling" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_lafjc")
+icon_alignment = 1
+
+[node name="ToolWateringCan" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_j0gij")
+icon_alignment = 1
+
+[node name="ToolCorn" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_xpkem")
+icon_alignment = 1
+
+[node name="ToolTomato" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_q88ea")
+icon_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWateringCan" to="." method="_on_tool_watering_can_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolCorn" to="." method="_on_tool_corn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTomato" to="." method="_on_tool_tomato_pressed"]
