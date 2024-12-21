@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdr0myfbjes6"]
+
+[ext_resource type="Texture2D" uid="uid://b8nnmyvc1gy8l" path="res://assets/game/objects/basic_plants.png" id="1_kc63s"]
+[ext_resource type="PackedScene" uid="uid://t6dqfnai8pvm" path="res://scenes/components/collectable_component.tscn" id="2_yxh3r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fexnk"]
+radius = 8.0
+
+[node name="CornHarvest" type="Sprite2D"]
+texture = ExtResource("1_kc63s")
+hframes = 6
+vframes = 2
+frame = 5
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_yxh3r")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_fexnk")
