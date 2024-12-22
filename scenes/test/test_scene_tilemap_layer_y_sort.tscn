@@ -27,13 +27,6 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAbAA4AAwAAAAAABAAYAA0AAwAAAAAAAwAcAAwAAwAAAAAAAwA=")
 tile_set = ExtResource("1_avg7k")
 
-[node name="Player" parent="." instance=ExtResource("2_etrth")]
-position = Vector2(418, 243)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-y_sort_enabled = true
-position = Vector2(-1, 1)
-
 [node name="Crops" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -49,5 +42,12 @@ position = Vector2(346, 147)
 
 [node name="Tomato2" parent="Crops" instance=ExtResource("4_ntjwq")]
 position = Vector2(375, 145)
+
+[node name="Player" parent="." instance=ExtResource("2_etrth")]
+position = Vector2(418, 243)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+y_sort_enabled = true
+position = Vector2(-1, 1)
 
 [node name="GameScreen" parent="." instance=ExtResource("5_ajoex")]

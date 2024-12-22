@@ -26,15 +26,17 @@ size = Vector2(10, 22)
 material = SubResource("ShaderMaterial_fvdjp")
 position = Vector2(0, -8)
 texture = SubResource("AtlasTexture_emx8d")
+offset = Vector2(0, -1)
 script = ExtResource("2_2bqq4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 8)
+position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_n3xrj")
 
 [node name="HurtComponent" parent="." instance=ExtResource("2_l44hr")]
+position = Vector2(0, -4)
 
 [node name="HurtComponentCollisionShape" type="CollisionShape2D" parent="HurtComponent"]
 position = Vector2(0, 1)
