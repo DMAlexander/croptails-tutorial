@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://yj8rv6qpk4b0"]
+[gd_scene load_steps=15 format=4 uid="uid://yj8rv6qpk4b0"]
 
 [ext_resource type="PackedScene" uid="uid://d3cn08b7d2dgt" path="res://scenes/components/day_night_cycle_component.tscn" id="1_eah0c"]
 [ext_resource type="TileSet" uid="uid://dp63gbggnvihg" path="res://tilesets/game_tile_set.tres" id="2_j1epk"]
@@ -13,11 +13,14 @@
 [ext_resource type="Script" path="res://scenes/components/crops_cursor_component.gd" id="8_obrok"]
 [ext_resource type="PackedScene" uid="uid://dd1htmsd3yjcs" path="res://scenes/components/save_level_data_component.tscn" id="9_7qjo7"]
 [ext_resource type="Script" path="res://scenes/components/save_level_data_component.gd" id="10_dxwbu"]
+[ext_resource type="PackedScene" uid="uid://dv63erh6uypex" path="res://scenes/components/test_scene_enable_tool_buttons_component.tscn" id="14_gxtbq"]
 
 [node name="TestSceneCropFieldsTilledDirt" type="Node2D"]
 
 [node name="SaveLevelDataComponent" parent="." instance=ExtResource("9_7qjo7")]
 script = ExtResource("10_dxwbu")
+
+[node name="TestSceneEnableToolButtonsComponent" parent="." instance=ExtResource("14_gxtbq")]
 
 [node name="TestSceneSaveDataManagerComponent" parent="." instance=ExtResource("3_cmv7g")]
 
