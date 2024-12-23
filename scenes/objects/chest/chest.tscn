@@ -1,0 +1,142 @@
+[gd_scene load_steps=21 format=3 uid="uid://q2uqgabwxa5y"]
+
+[ext_resource type="Texture2D" uid="uid://dq78wimrj1u0p" path="res://assets/game/objects/chest.png" id="1_are70"]
+[ext_resource type="Script" path="res://scenes/objects/chest/chest.gd" id="1_nj3kq"]
+[ext_resource type="PackedScene" uid="uid://bt7x3uw8cn1f2" path="res://scenes/components/interactable_component.tscn" id="2_05yop"]
+[ext_resource type="PackedScene" uid="uid://bmof8dru7oved" path="res://scenes/components/interactable_label_component.tscn" id="3_bsxjq"]
+[ext_resource type="PackedScene" uid="uid://ba4cgdsd5cfwv" path="res://scenes/components/feed_component.tscn" id="4_erc4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0pse"]
+size = Vector2(16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cg8a"]
+atlas = ExtResource("1_are70")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emhdt"]
+atlas = ExtResource("1_are70")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h52h2"]
+atlas = ExtResource("1_are70")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aov12"]
+atlas = ExtResource("1_are70")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kurk1"]
+atlas = ExtResource("1_are70")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di0da"]
+atlas = ExtResource("1_are70")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iain0"]
+atlas = ExtResource("1_are70")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if7qg"]
+atlas = ExtResource("1_are70")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r71xn"]
+atlas = ExtResource("1_are70")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5u2o"]
+atlas = ExtResource("1_are70")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifheh"]
+atlas = ExtResource("1_are70")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qg7lr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cg8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emhdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h52h2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aov12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kurk1")
+}],
+"loop": false,
+"name": &"chest_close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di0da")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iain0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if7qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r71xn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5u2o")
+}],
+"loop": false,
+"name": &"chest_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifheh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ctag3"]
+radius = 26.0192
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4etk"]
+
+[node name="Chest" type="StaticBody2D"]
+script = ExtResource("1_nj3kq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_k0pse")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qg7lr")
+autoplay = "default"
+
+[node name="InteractableComponent" parent="." instance=ExtResource("2_05yop")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractableComponent"]
+shape = SubResource("CircleShape2D_ctag3")
+debug_color = Color(0.801605, 0.209771, 0.886607, 0.42)
+
+[node name="InteractableLabelComponent" parent="." instance=ExtResource("3_bsxjq")]
+offset_left = -32.0
+offset_top = -34.0
+offset_right = -32.0
+offset_bottom = -34.0
+
+[node name="RewardMarker" type="Marker2D" parent="."]
+position = Vector2(19, 18)
+
+[node name="FeedComponent" parent="." instance=ExtResource("4_erc4x")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FeedComponent"]
+shape = SubResource("CircleShape2D_y4etk")
+debug_color = Color(0.643137, 0.513726, 0.266667, 0.490196)
