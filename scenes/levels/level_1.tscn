@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://dmhkwr2wqwmy2"]
+[gd_scene load_steps=2 format=3 uid="uid://dmhkwr2wqwmy2"]
+
+[ext_resource type="PackedScene" uid="uid://cc76f4r5rldnv" path="res://audio/music/on_the_farm_music.tscn" id="1_f878p"]
 
 [node name="Level1" type="Node2D"]
+
+[node name="OnTheFarmMusic" parent="." instance=ExtResource("1_f878p")]
