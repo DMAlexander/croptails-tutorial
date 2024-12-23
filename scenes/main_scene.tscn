@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2oppw7xs55im"]
+
+[ext_resource type="PackedScene" uid="uid://d3cn08b7d2dgt" path="res://scenes/components/day_night_cycle_component.tscn" id="1_uf7eq"]
+[ext_resource type="PackedScene" uid="uid://cg6yrvm6vritk" path="res://scenes/ui/game_screen.tscn" id="2_vw1tc"]
+[ext_resource type="PackedScene" uid="uid://dmhkwr2wqwmy2" path="res://scenes/levels/level_1.tscn" id="2_yq48d"]
+
+[node name="MainScene" type="Node"]
+
+[node name="DayNightCycleComponent" parent="." instance=ExtResource("1_uf7eq")]
+visible = false
+
+[node name="LevelRoot" type="Node2D" parent="."]
+
+[node name="Level1" parent="LevelRoot" instance=ExtResource("2_yq48d")]
+
+[node name="GameScreen" parent="." instance=ExtResource("2_vw1tc")]
